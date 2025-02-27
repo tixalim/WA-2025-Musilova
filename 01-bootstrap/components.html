@@ -9,27 +9,53 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
         <div class="container">
-                <a class="navbar-brand" href="#">bootstrap example page</a>
-                <div class="">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#buttons">tlacitka</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#cards">karty</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tables">tabulky</a></li>
-                        <li class="nav-item"><a class="nav-link" href="components.html">vlastni komponenty</a></li>
-                    </ul>
-
-                </div>
+            <a class="navbar-brand" href="#">Vlastní Komponenty</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#buttons">Tlačítka</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cards">Karty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tables">Tabulky</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+    
     <header class="text-center">
-        <h1>vitej na bootstrap strance</h1>
-        <p>bude zde cokoliv na co si vzpomenes, ale uz chci domu xoxo</p>
-        <a href="#button" class="btn btn-primary btn-xl">zacit</a>
+        <div style="max-width: 800px; margin: auto; margin-top: 50px; margin-bottom: 50px;">
+            <h1>vitej na moji bootstrap strance</h1>
+
+        </div>
     </header>
 
-    <!-- tlacitka -->
+    <div style="max-width: 600px; margin: auto;">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/images/1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/3.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    
 
     <section class="container mt-4" id="buttons">
         <h2>tlacitka</h2>
