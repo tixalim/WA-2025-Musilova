@@ -25,6 +25,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../../controllers/book_list.php">Výpis knih</a>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
