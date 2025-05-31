@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../models/Database.php';
 require_once '../models/Book.php';
 
@@ -24,6 +26,9 @@ class BookController {
             $description = htmlspecialchars($_POST['description']);
             $link = htmlspecialchars($_POST['link']);
 
+            // Získání ID přihlášeného uživatele
+            $user_id = $_SESSION['user_id'];
+
             // Zpracování nahraných obrázků
             $imagePaths = [];
             if (!empty($_FILES['images']['name'][0])) {
@@ -39,8 +44,11 @@ class BookController {
             }
 
 
-            // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
-            if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
+            // Uložení knihy do DB včetně user_id
+            if ($this->bookModel->create(
+                $title, $author, $category, $subcategory, $year,
+                $price, $isbn, $description, $link, $imagePaths, $user_id
+            )) {
                 header("Location: ../controllers/book_list.php");
                 exit();
             } else {
@@ -58,3 +66,8 @@ class BookController {
 // Volání metody při odeslání formuláře
 $controller = new BookController();
 $controller->createBook();
+
+// Zavolá pouze pokud šlo o POST request (odeslání formuláře)
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $controller->createBook();
+}
